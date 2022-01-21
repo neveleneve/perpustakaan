@@ -1,7 +1,7 @@
 <?php
 
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan_haifa/configuration/dbconn.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan_haifa/configuration/session.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/session.php');
 //----------------------------------------------------------------------------------//
 $uname = $_POST['username'];
 $password = $_POST['password'];

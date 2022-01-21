@@ -1,6 +1,6 @@
 <?php
 
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan_haifa/configuration/dbconn.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
 
 if (isset($_POST['login'])) {
     $uname = $_POST['username'];

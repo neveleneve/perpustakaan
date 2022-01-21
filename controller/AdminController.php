@@ -1,6 +1,6 @@
 <?php
 $admin = new AdminController();
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan_haifa/configuration/dbconn.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
 //----------------------------------------------------------------------------------//
 // kondisi untuk tambah buku
 if (isset($_POST['btn_add_buku'])) {

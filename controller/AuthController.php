@@ -1,6 +1,6 @@
 <?php
 
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan_haifa/configuration/dbconn.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
 
 class AuthController
 {
