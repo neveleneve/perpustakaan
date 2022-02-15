@@ -1,14 +1,16 @@
 <?php
-// Laragon
-require($_SERVER['DOCUMENT_ROOT'] . '/controller/AuthController.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/configuration/pagename.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/controller/AdminController.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/configuration/session.php');
-// XAMPP
-// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/controller/AuthController.php');
-// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/pagename.php');
-// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/controller/AdminController.php');
-// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/session.php');
+require($_SERVER['DOCUMENT_ROOT']
+    // . '/perpustakaan'
+    . '/controller/AuthController.php');
+require($_SERVER['DOCUMENT_ROOT']
+    // . '/perpustakaan'
+    . '/configuration/pagename.php');
+require($_SERVER['DOCUMENT_ROOT']
+    // . '/perpustakaan'
+    . '/controller/AdminController.php');
+require($_SERVER['DOCUMENT_ROOT']
+    // . '/perpustakaan'
+    . '/configuration/session.php');
 
 function namabulan($nomor)
 {
@@ -62,15 +64,11 @@ $auth->AuthCheck('location:../login', null);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <!-- Laragon -->
-    <link href="http://<?= $_SERVER['HTTP_HOST'] ?>/template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <!-- XAMPP -->
-    <!-- <link href="http://<?= $_SERVER['HTTP_HOST'] ?>/perpustakaan/template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="http://<?= $_SERVER['HTTP_HOST'] // . '/perpustakaan' 
+                        ?>/template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- Laragon -->
-    <link href="http://<?= $_SERVER['HTTP_HOST'] ?>/template/css/sb-admin-2.css" rel="stylesheet">
-    <!-- XAMPP -->
-    <!-- <link href="http://<?= $_SERVER['HTTP_HOST'] ?>/perpustakaan/template/css/sb-admin-2.css" rel="stylesheet"> -->
+    <link href="http://<?= $_SERVER['HTTP_HOST'] // . '/perpustakaan' 
+                        ?>/template/css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -129,16 +127,14 @@ $auth->AuthCheck('location:../login', null);
             </div>
         </div>
     </div>
-    <!-- Laragon -->
-    <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/template/vendor/jquery/jquery.min.js"></script>
-    <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/template/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/template/js/sb-admin-2.min.js"></script>
-    <!-- XAMPP -->
-    <!-- <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/perpustakaan/template/vendor/jquery/jquery.min.js"></script>
-    <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/perpustakaan/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/perpustakaan/template/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/perpustakaan/template/js/sb-admin-2.min.js"></script> -->
+    <script src="http://<?= $_SERVER['HTTP_HOST'] // . '/perpustakaan' 
+                        ?>/template/vendor/jquery/jquery.min.js"></script>
+    <script src="http://<?= $_SERVER['HTTP_HOST'] // . '/perpustakaan' 
+                        ?>/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="http://<?= $_SERVER['HTTP_HOST'] // . '/perpustakaan' 
+                        ?>/template/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="http://<?= $_SERVER['HTTP_HOST'] // . '/perpustakaan' 
+                        ?>/template/js/sb-admin-2.min.js"></script>
 
 </body>
 

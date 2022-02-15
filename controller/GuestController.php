@@ -1,9 +1,8 @@
 <?php
-// Laragon
-require($_SERVER['DOCUMENT_ROOT'] . '/configuration/dbconn.php');
-// XAMPP
-// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
-
+require($_SERVER['DOCUMENT_ROOT']
+    // . '/perpustakaan'
+    . '/configuration/dbconn.php');
+    
 if (isset($_POST['login'])) {
     $uname = $_POST['username'];
     $password = $_POST['password'];
@@ -14,6 +13,5 @@ if (isset($_POST['login'])) {
 
 class GuestController
 {
-    
 }
 echo 0;
