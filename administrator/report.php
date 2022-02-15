@@ -42,52 +42,54 @@ require($_SERVER['DOCUMENT_ROOT']
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="row mb-3">
-                                        <div class="col-12">
-                                            <select class="form-control form-control-sm" name="jenis" id="jenis">
-                                                <option value="" selected hidden>Pilih Jenis Report</option>
-                                                <option value="1">Peminjaman</option>
-                                                <option value="2">Pengembalian</option>
-                                                <option value="3">Buku</option>
-                                            </select>
+                                    <form action="../controller/AdminController.php" method="post" target="__blank">
+                                        <div class="row mb-3">
+                                            <div class="col-12">
+                                                <select class="form-control form-control-sm" name="jenis" id="jenis" required>
+                                                    <option value="" selected hidden>Pilih Jenis Report</option>
+                                                    <option value="1">Peminjaman</option>
+                                                    <option value="2">Pengembalian</option>
+                                                    <option value="3">Buku</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-6">
-                                            <select class="form-control form-control-sm" name="bulan" id="bulan">
-                                                <option value="" selected hidden>Pilih Bulan</option>
-                                                <option value="1">Januari</option>
-                                                <option value="2">Februari</option>
-                                                <option value="3">Maret</option>
-                                                <option value="4">April</option>
-                                                <option value="5">Mei</option>
-                                                <option value="6">Juni</option>
-                                                <option value="7">Juli</option>
-                                                <option value="8">Agustus</option>
-                                                <option value="9">September</option>
-                                                <option value="10">Oktober</option>
-                                                <option value="11">November</option>
-                                                <option value="12">Desember</option>
-                                            </select>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <select class="form-control form-control-sm" name="bulan" id="bulan" required>
+                                                    <option value="" selected hidden>Pilih Bulan</option>
+                                                    <option value="1">Januari</option>
+                                                    <option value="2">Februari</option>
+                                                    <option value="3">Maret</option>
+                                                    <option value="4">April</option>
+                                                    <option value="5">Mei</option>
+                                                    <option value="6">Juni</option>
+                                                    <option value="7">Juli</option>
+                                                    <option value="8">Agustus</option>
+                                                    <option value="9">September</option>
+                                                    <option value="10">Oktober</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">Desember</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <select class="form-control form-control-sm" name="tahun" id="tahun" required>
+                                                    <option value="" selected hidden>Pilih Tahun</option>
+                                                    <?php
+                                                    for ($i = 0; $i < 5; $i++) {
+                                                    ?>
+                                                        <option value="<?= date('Y') - $i ?>"><?= date('Y') - $i ?></option>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div class="col-6">
-                                            <select class="form-control form-control-sm" name="tahun" id="tahun">
-                                                <option value="" selected hidden>Pilih Tahun</option>
-                                                <?php
-                                                for ($i = 0; $i < 5; $i++) {
-                                                ?>
-                                                    <option value="<?= date('Y') - $i ?>"><?= date('Y') - $i ?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select>
+                                        <div class="row mb-3">
+                                            <div class="col-12">
+                                                <button type="submit" id="cetaklaporan" name="cetaklaporan" class="btn btn-sm btn-block btn-primary">Cetak</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-12">
-                                            <button type="submit" id="cetaklaporan" name="cetaklaporan" class="btn btn-sm btn-block btn-primary">Cetak</button>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

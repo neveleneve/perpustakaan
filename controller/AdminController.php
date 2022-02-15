@@ -58,6 +58,10 @@ if (isset($_POST['pengembalian'])) {
     $admin->pengembalianBuku($id);
 }
 
+if (isset($_POST['cetaklaporan'])) {
+    header('location:../administrator/laporan?id=' . $_POST['jenis'] . '&bulan=' . $_POST['bulan'] . '&tahun=' . $_POST['tahun']);
+}
+
 class AdminController
 {
     // Info
@@ -176,6 +180,7 @@ class AdminController
     //----------------------------------------------------------------------------------//
     public function inputPinjamBuku($kode, $kodebuku, $jumlah, $namapeminjam, $alamatpeminjam)
     {
+        // ubah penambahan peminjaman jika buku yang tersedia kurang
         global $koneksi;
         $tanggal = date('Y-m-d');
         if ($namapeminjam == null && $alamatpeminjam == null) {
@@ -190,7 +195,6 @@ class AdminController
             INSERT INTO peminjaman (id_peminjaman, nama_peminjam, alamat_peminjam, status_input, tanggal_pinjam) VALUES ('$kode', '$namapeminjam', '$alamatpeminjam', 1, '$tanggal')";
         }
         if (mysqli_multi_query($koneksi, $query)) {
-            # code...
         } else {
             echo 'error in Inputting Data Peminjaman Buku';
         }
@@ -260,5 +264,32 @@ class AdminController
         $datapeminjaman = mysqli_fetch_all($qdatapeminjaman);
         //----------------------------------------------------------------------------------//
         return $datapeminjaman;
+    }
+    //----------------------------------------------------------------------------------//
+    public function cetakLaporan($id, $bulan, $tahun)
+    {
+        global $koneksi;
+        switch ($id) {
+            case 1:
+                $namalaporan = 'Peminjaman Buku';
+                $query = mysqli_query($koneksi, 'SELECT * FROM peminjaman WHERE MONTH(tanggal_pinjam) = ' . $bulan . ' AND YEAR(tanggal_pinjam) = ' . $tahun . ' AND tanggal_kembali IS NULL');
+                break;
+            case 2:
+                $namalaporan = 'Pengembalian Buku';
+                $query = mysqli_query($koneksi, 'SELECT * FROM peminjaman WHERE MONTH(tanggal_kembali) = ' . $bulan . ' AND YEAR(tanggal_kembali) = ' . $tahun . ' AND tanggal_kembali IS NOT NULL');
+                break;
+            case 3:
+                $namalaporan = 'Ketersediaan Buku';
+                $query = mysqli_query($koneksi, 'SELECT * FROM buku order by id_buku');
+                break;
+            default:
+                $namalaporan = null;
+                break;
+        }
+        $datalaporan = mysqli_fetch_all($query);
+        return [
+            'namaLaporan' => $namalaporan,
+            'dataLaporan' => $datalaporan,
+        ];
     }
 }
