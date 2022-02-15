@@ -1,8 +1,14 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/session.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/pagename.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/controller/AuthController.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/controller/AdminController.php');
+// Laragon
+require($_SERVER['DOCUMENT_ROOT'] . '/controller/AuthController.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/configuration/pagename.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/controller/AdminController.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/configuration/session.php');
+// XAMPP
+// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/controller/AuthController.php');
+// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/pagename.php');
+// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/controller/AdminController.php');
+// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/session.php');
 
 $auth = new AuthController();
 $admin = new AdminController();

@@ -1,6 +1,9 @@
 <?php
 $admin = new AdminController();
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
+// Laragon
+require($_SERVER['DOCUMENT_ROOT'] . '/configuration/dbconn.php');
+// XAMPP
+// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
 //----------------------------------------------------------------------------------//
 // kondisi untuk tambah buku
 if (isset($_POST['btn_add_buku'])) {

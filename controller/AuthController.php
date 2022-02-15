@@ -1,6 +1,8 @@
 <?php
-
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
+// XAMPP
+// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
+// Laragon
+require($_SERVER['DOCUMENT_ROOT'] . '/configuration/dbconn.php');
 
 class AuthController
 {

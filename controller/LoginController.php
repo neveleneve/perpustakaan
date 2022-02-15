@@ -1,7 +1,10 @@
 <?php
-
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/session.php');
+// Laragon
+require($_SERVER['DOCUMENT_ROOT'] . '/configuration/dbconn.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/configuration/session.php');
+// XAMPP
+// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/dbconn.php');
+// require($_SERVER['DOCUMENT_ROOT'] . '/perpustakaan/configuration/session.php');
 //----------------------------------------------------------------------------------//
 $uname = $_POST['username'];
 $password = $_POST['password'];
